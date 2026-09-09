@@ -1,0 +1,165 @@
+================================================================================
+PRAC 03 — ASSIGNMENT GUIDE
+Data Wrangling & Matplotlib
+================================================================================
+
+1. OBJECTIVES
+--------------------------------------------------------------------------------
+
+Read the lab/ guides, complete the three assignments on your own, then push
+to Git.
+
+
+2. FOLDER LAYOUT
+--------------------------------------------------------------------------------
+
+  lab/                                          Hướng dẫn — đọc, không nộp
+                                                Guides — read, do not submit
+
+  w3_1_Data-Wrangling_tiki.ipynb                Bài tập 1 / Assignment 1
+  tiki_data/                                    Dữ liệu bài 1 (giày Tiki)
+
+  w3_2_Matplotlib.ipynb                         Bài tập 2 / Assignment 2
+                                                Dataset: ./data/housing.csv
+
+  w3_3_Data-Wrangling_student_feedback.ipynb    Bài tập 3 / Assignment 3
+                                                Dataset: student_feedback_data/
+
+
+3. REQUIRED READING  (thư mục lab/)
+--------------------------------------------------------------------------------
+
+Read these first. lab/ is for learning — do not submit it.
+
+  (1) lab/w3_0_Data-Wrangling.ipynb
+      Data Wrangling trên Auto MPG. Áp dụng cho bài 1 và bài 3.
+
+      - Missing values ("?", mean / mode / drop)
+      - Correct data format (astype)
+      - Standardization (đổi đơn vị, ví dụ mpg → L/100km)
+      - Normalization (x / x.max() về 0–1)
+      - Binning (pd.cut, np.linspace)
+      - Dummy variables (pd.get_dummies)
+      - Check and save (to_csv, index=False)
+
+  (2) lab/w3_3_missing_MCAR_MAR_MNAR.ipynb
+      Vì sao dữ liệu thiếu (MCAR / MAR / MNAR) và chọn cách xử lý.
+
+  (3) lab/w3_2_introduction_matplotlib.ipynb
+      Matplotlib: pyplot vs OO, line / scatter / bar / histogram / subplots.
+      Áp dụng cho bài 2.
+
+  (4) lab/w3_4_How-to-Read-Plots.ipynb
+      Cách đọc hình Matplotlib và viết nhận xét (không kể lại lệnh vẽ).
+
+  (5) lab/w3_1_introduction_seaborn.ipynb
+      Seaborn (hue, bar/count, box, violin, heatmap, relplot/catplot).
+
+  (6) lab/w3_5_How-to-Read-Seaborn.ipynb
+      Cách đọc hình Seaborn (CI ribbon, box, heatmap, facet).
+
+  Tham khảo thêm / extra:
+      lab/w2_Lab-Data-Wrangling.ipynb
+      lab/Lab 03.docx
+
+
+4. BÀI TẬP CẦN LÀM / ASSIGNMENTS
+--------------------------------------------------------------------------------
+
+  w3_1_Data-Wrangling_tiki.ipynb
+      Data Wrangling — Tiki e-commerce (2 bộ giày nam / nữ).
+      Áp dụng lab/w3_0_Data-Wrangling.ipynb.
+      Dataset: tiki_data/vietnamese_tiki_products_men_shoes.csv
+               tiki_data/vietnamese_tiki_products_women_shoes.csv
+      Nguồn:
+        https://www.kaggle.com/datasets/michaelminhpham/vietnamese-tiki-e-commerce-dataset
+      Biến mục tiêu gốc: quantity_sold.
+
+      Làm đủ 6 bước trên bộ nam (có dòng mẫu), rồi lặp lại trên bộ nữ:
+      1. Missing values
+      2. Correct data format
+      3. Standardization (VND → nghìn đồng, % giảm giá)
+      4. Normalization (x / max)
+      5. Binning giá (Low / Medium / High)
+      6. Dummy (fulfillment_type)
+      Check and save: tiki_men_shoes_clean.csv, tiki_women_shoes_clean.csv
+
+  w3_2_Matplotlib.ipynb
+      Data Visualization with Matplotlib (nhà California).
+      Áp dụng lab/w3_2_introduction_matplotlib.ipynb
+              và lab/w3_4_How-to-Read-Plots.ipynb.
+      Dataset: ./data/housing.csv
+      Câu hỏi chính: đặc trưng nào liên quan đến gia_nha_trung_vi
+                     (median house value)?
+
+      Nội dung:
+      1. Import data
+      2. Line plot
+      3. Scatter plot
+      4. Bar plot
+      5. Histogram
+      6. Subplots
+      Điền Question #1–#7 và viết nhận xét (không copy nguyên demo).
+
+  w3_3_Data-Wrangling_student_feedback.ipynb
+      Data Wrangling — phản hồi sinh viên (văn bản).
+      Áp dụng lab/w3_0_Data-Wrangling.ipynb.
+      Dataset: student_feedback_data/synthetic_train.csv
+               student_feedback_data/synthetic_val.csv
+      Nguồn:
+        https://www.kaggle.com/datasets/toreleon/synthetic-vietnamese-students-feedback-corpus
+
+      Làm đủ 6 bước trên train (có dòng mẫu), rồi lặp lại trên validation:
+      1. Missing values (câu rỗng → drop; sentiment/topic → mode)
+      2. Correct data format (category; n_chars, n_words)
+      3. Standardization (sentiment → -1 / 0 / 1)
+      4. Normalization (độ dài câu)
+      5. Binning Short / Medium / Long
+      6. Dummy (topic)
+      Check and save: student_feedback_train_clean.csv,
+                      student_feedback_val_clean.csv
+
+
+5. HOW TO COMPLETE
+--------------------------------------------------------------------------------
+- lab/ chỉ đọc. Code bài tập ở 3 file w3_1, w3_2, w3_3.
+- Điền vào dòng # TODO / Question; giữ dòng mẫu làm tham chiếu.
+- Viết nhận xét dựa trên output (bảng, biểu đồ), không kể lại tên hàm.
+- Chạy toàn bộ notebook, giữ output trong file nộp.
+- Không xóa đề bài / markdown sẵn có.
+- Tự làm; không copy nguyên đáp án từ lab.
+
+
+6. NỘP BÀI LÊN GIT / GIT SUBMISSION
+--------------------------------------------------------------------------------
+
+Nộp đúng 3 notebook (giữ nguyên tên):
+
+  w3_1_Data-Wrangling_tiki.ipynb
+  w3_2_Matplotlib.ipynb
+  w3_3_Data-Wrangling_student_feedback.ipynb
+
+Đường dẫn trên GitHub:
+
+  Practice/w3/
+
+Ví dụ:
+
+  git add w3_1_Data-Wrangling_tiki.ipynb w3_2_Matplotlib.ipynb w3_3_Data-Wrangling_student_feedback.ipynb
+  git commit -m "Prac03: complete w3_1 (Tiki), w3_2 (Matplotlib), w3_3 (feedback)"
+  git push
+
+Quy định:
+- Nộp 3 notebook trên + ảnh chụp GitHub sau khi push.
+- Không nộp thư mục lab/ (hướng dẫn).
+- CSV sạch (to_csv) để trong notebook; không bắt buộc đẩy file csv lên Git.
+
+
+7. GRADING HINTS
+--------------------------------------------------------------------------------
+- Notebook chạy được từ đầu đến cuối, không lỗi.
+- Đủ TODO / Question; bài 1 và 3 làm cả 2 bộ dữ liệu.
+- Có nhận xét rõ, dựa trên kết quả vừa tính / vừa vẽ.
+- Áp dụng đúng nguyên lý đã học ở lab/ (wrangling + matplotlib + đọc plot).
+- Đúng tên file, đúng thư mục Practice/w3 trên Git.
+
